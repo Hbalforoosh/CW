@@ -46,14 +46,14 @@ class EBook(Book):
 
 
 author1 = Author("HoseinBlaforoosh", "Hbalforoosh@gmail.com")
-author1 = Author("AliArian", "ali@gmail.com")
+author2 = Author("AliArian", "ali@gmail.com")
 
 print_book = PrintedBook(1, "book1", 50000, 100)
-print_book.add_author(a1)
-print_book.add_author(a2)
+print_book.add_author(author1)
+print_book.add_author(author2)
 
 E_book = EBook(2, "book2", 1500000, 250)
-E_book.add_author(a1)
+E_book.add_author(author1)
 
 print(print_book.show())
 print(E_book.show())
