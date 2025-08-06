@@ -13,11 +13,12 @@ class Customer:
 
     def add_fav(self, product):
         if isinstance(product, Product):
-            if Product.product_favorite_counter[product.name]:
+            if Product.product_favorite_counter.get(product.name):
                 Product.product_favorite_counter[product.name] += 1
             else:
                 Product.product_favorite_counter[product.name] = 1
-            return self.fav_list.add(product)
+            self.fav_list.add(product)
+            return f"Added {product.name} to favorites."
 
     def show_fav(self):
         return f"List fav is: {self.fav_list}"
@@ -33,4 +34,11 @@ class Manager:
     data_user = {}
     favorite_count = {}
     products = {}
-    def favorites(self):
+
+    @staticmethod
+    def most_popular_product():
+        if not Product.product_favorite_counter:
+            return "No products have been favorited yet."
+        most_popular = max(
+            Product.product_favorite_counter.items(), key=lambda x: x[1])
+        return f"Most popular product is '{most_popular[0]}' with {most_popular[1]} favorites."
