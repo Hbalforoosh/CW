@@ -1,0 +1,23 @@
+[
+  {
+    "username": "hacker007",
+    "age": 22,
+    "posts": 0,
+    "followers": 5000,
+    "action": true
+  },
+  {
+    "username": "spam_bot",
+    "age": 0,
+    "posts": 2000,
+    "followers": 2,
+    "action": false
+  },
+  {
+    "username": "ghost",
+    "age": 19,
+    "posts": 0,
+    "followers": 0,
+    "action": true
+  }
+]
